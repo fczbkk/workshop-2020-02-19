@@ -2,14 +2,20 @@
   "name": "workshop-2020-02-19",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel ./src --out-dir ./build --config-file ./configs/babel.json"
   },
   "keywords": [],
   "author": "Riki Fridrich <riki@fczbkk.com> (http://fczbkk.com/)",
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "webpack": "^4.41.6"
   }
 }
