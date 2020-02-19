@@ -4,7 +4,12 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "build": "babel ./src --out-dir ./build --config-file ./configs/babel.json"
+    "prebuild": "npm run cleanup",
+    "build": "npm run build-modern & npm run build-old",
+    "transpile": "babel ./src",
+    "build-old": "npm run transpile -- --out-dir ./build --config-file ./configs/babel.json",
+    "build:modern": "npm run transpile -- --out-dir ./build-modern --config-file ./configs/babel-modern.json",
+    "cleanup": "rimraf ./build"
   },
   "keywords": [],
   "author": "Riki Fridrich <riki@fczbkk.com> (http://fczbkk.com/)",
@@ -16,6 +21,7 @@
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
+    "rimraf": "^3.0.2",
     "webpack": "^4.41.6"
   }
 }
