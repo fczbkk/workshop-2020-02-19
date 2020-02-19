@@ -13,7 +13,10 @@
     "lint": "eslint ./src/**/*.js",
     "lint:strict": "npm run lint -- --max-warnings 0",
     "doc": "jsdoc -c ./configs/jsdoc.config.json",
-    "doc:readme": "documentation readme ./src/index.js -s 'Documentation'"
+    "doc:readme": "documentation readme ./src/index.js -s 'Documentation'",
+    "preversion": "npm run lint",
+    "version": "npm run build && npm run changelog && npm run doc && npm run doc:readme && git add -A",
+    "postversion": "git push && git push --tags"
   },
   "keywords": [],
   "author": "Riki Fridrich <riki@fczbkk.com> (http://fczbkk.com/)",
