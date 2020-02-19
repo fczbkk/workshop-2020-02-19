@@ -1,5 +1,5 @@
-const {get} = require('lodash')
-const add = require('./add.js')
+import {get} from 'lodash-es'
+import add from './add.js'
 
 const myObject = {
   aaa: 'bbb'
