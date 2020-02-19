@@ -11,7 +11,9 @@
     "cleanup": "rimraf ./build",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "lint": "eslint ./src/**/*.js",
-    "lint:strict": "npm run lint -- --max-warnings 0"
+    "lint:strict": "npm run lint -- --max-warnings 0",
+    "doc": "jsdoc -c ./configs/jsdoc.config.json",
+    "doc:readme": "documentation readme ./src/index.js -s 'Documentation'"
   },
   "keywords": [],
   "author": "Riki Fridrich <riki@fczbkk.com> (http://fczbkk.com/)",
@@ -29,6 +31,8 @@
     "eslint": "^6.8.0",
     "rimraf": "^3.0.2",
     "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "documentation": "^8.1.2",
+    "jsdoc": "^3.5.5"
   }
 }
