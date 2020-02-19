@@ -16,7 +16,8 @@
     "doc:readme": "documentation readme ./src/index.js -s 'Documentation'",
     "preversion": "npm run lint",
     "version": "npm run build && npm run changelog && npm run doc && npm run doc:readme && git add -A",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "keywords": [],
   "author": "Riki Fridrich <riki@fczbkk.com> (http://fczbkk.com/)",
@@ -36,6 +37,8 @@
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
     "documentation": "^8.1.2",
-    "jsdoc": "^3.5.5"
+    "jsdoc": "^3.5.5",
+    "conventional-changelog-angular": "^5.0.2",
+    "conventional-changelog-cli": "^2.0.11"
   }
 }
