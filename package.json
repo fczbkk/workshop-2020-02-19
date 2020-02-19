@@ -9,7 +9,9 @@
     "build-old": "npm run transpile -- --out-dir ./build --config-file ./configs/babel.json",
     "build:modern": "npm run transpile -- --out-dir ./build-modern --config-file ./configs/babel-modern.json",
     "cleanup": "rimraf ./build",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js"
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "lint": "eslint ./src/**/*.js",
+    "lint:strict": "npm run lint -- --max-warnings 0"
   },
   "keywords": [],
   "author": "Riki Fridrich <riki@fczbkk.com> (http://fczbkk.com/)",
@@ -24,6 +26,7 @@
     "@babel/preset-env": "^7.8.4",
     "babel-loader": "^8.0.6",
     "cross-env": "^7.0.0",
+    "eslint": "^6.8.0",
     "rimraf": "^3.0.2",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
